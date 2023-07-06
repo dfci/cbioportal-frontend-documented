@@ -6234,7 +6234,7 @@ export class StudyViewPageStore
 
     @computed
     get visibleAttributes(): ChartMeta[] {
-        return _.reduce(
+        const moo = _.reduce(
             Array.from(this._chartVisibility.entries() || []),
             (acc, [chartUniqueKey, visible]) => {
                 if (visible && this.chartMetaSet[chartUniqueKey]) {
@@ -6246,15 +6246,21 @@ export class StudyViewPageStore
             [] as ChartMeta[]
         );
 
-        // return [ {
-        //     "uniqueKey": "msk_impact_2017_mutations",
-        //     "dataType": "Genomic",
-        //     "patientAttribute": false,
-        //     "displayName": "Mutated Genes",
-        //     "priority": 90,
-        //     "renderWhenDataChange": false,
-        //     "description": ""
-        // }] as ChartMeta[];
+        const clinicals = moo.filter(m => m.dataType === 'Clinical');
+
+        //return moo;
+        return [
+            {
+                uniqueKey: 'msk_impact_2017_mutations',
+                dataType: 'Genomic',
+                patientAttribute: false,
+                displayName: 'Mutated Genes',
+                priority: 90,
+                renderWhenDataChange: false,
+                description: '',
+            },
+            ...clinicals,
+        ] as ChartMeta[];
     }
 
     @computed

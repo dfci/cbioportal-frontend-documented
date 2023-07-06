@@ -16,5 +16,6 @@ export const internalClientColumnStore = new CBioPortalAPIInternal();
 
 proxyColumnStore(internalClientColumnStore, 'fetchMutatedGenes');
 proxyColumnStore(internalClientColumnStore, 'fetchFilteredSamples');
+proxyColumnStore(internalClientColumnStore, 'fetchClinicalDataCounts');
 
 export default internalClient;
