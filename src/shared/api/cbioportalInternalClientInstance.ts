@@ -1,10 +1,14 @@
 import { CBioPortalAPIInternal } from 'cbioportal-ts-api-client';
+import { AppStore } from 'AppStore';
+import { getServerConfig } from 'config/config';
 
 function proxyColumnStore(client: any, endpoint: string) {
     const method = `${endpoint}UsingPOSTWithHttpInfo`;
     const old = client[method];
     client[method] = function(params: any) {
-        params.$domain = `http://localhost:8080/cbioportal_war/api/column-store`;
+        params.$domain = `http://${
+            getServerConfig().base_url
+        }/api/column-store`;
         const url = old.apply(this, [params]);
         return url;
     };
