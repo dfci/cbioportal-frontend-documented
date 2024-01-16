@@ -111,6 +111,15 @@ const ErrorPage = SuspenseWrapper(
     // @ts-ignore
     React.lazy(() => import('./pages/resultsView/ErrorPage'))
 );
+const Importer = SuspenseWrapper(
+    React.lazy(() => import('./pages/staticPages/importer/Importer'))
+);
+const ImporterStudy = SuspenseWrapper(
+    React.lazy(() => import('./pages/staticPages/importer/ImporterStudy'))
+);
+const LogDisplay = SuspenseWrapper(
+    React.lazy(() => import('./pages/staticPages/importer/LogDisplay'))
+);
 
 import $ from 'jquery';
 import { getBrowserWindow } from 'cbioportal-frontend-commons';
@@ -438,6 +447,12 @@ export const makeRoutes = () => {
                             comparisonTabParamValidator()
                         )
                     )}
+                />
+                <Route path="/importer" component={Importer} />
+                <Route path="/import/:studyId" component={ImporterStudy} />
+                <Route
+                    path="/logs/:logType/:studyId/:logId"
+                    component={LogDisplay}
                 />
 
                 <Route path="/mutation_mapper" component={MutationMapperTool} />
