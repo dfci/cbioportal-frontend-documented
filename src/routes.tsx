@@ -112,12 +112,15 @@ const ErrorPage = SuspenseWrapper(
     React.lazy(() => import('./pages/resultsView/ErrorPage'))
 );
 const Importer = SuspenseWrapper(
+    // @ts-ignore
     React.lazy(() => import('./pages/staticPages/importer/Importer'))
 );
 const ImporterStudy = SuspenseWrapper(
+    // @ts-ignore
     React.lazy(() => import('./pages/staticPages/importer/ImporterStudy'))
 );
 const LogDisplay = SuspenseWrapper(
+    // @ts-ignore
     React.lazy(() => import('./pages/staticPages/importer/LogDisplay'))
 );
 
