@@ -375,7 +375,7 @@ export default class QueryContainer extends React.Component<
                                                 }
                                             )}
                                         >
-                                            Query By Gene
+                                            Query By Test
                                         </a>
                                     </DefaultTooltip>
                                     OR
