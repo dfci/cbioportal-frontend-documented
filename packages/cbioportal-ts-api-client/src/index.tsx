@@ -65,5 +65,7 @@ export {
     CustomDriverAnnotationReport,
     StructuralVariant,
     StructuralVariantFilter,
+    ImportLog,
+    ImportStudy,
     default as CBioPortalAPIInternal,
 } from './generated/CBioPortalAPIInternal';
