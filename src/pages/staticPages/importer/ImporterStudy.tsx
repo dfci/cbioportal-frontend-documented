@@ -14,6 +14,7 @@ import { ImportStudy, ImportLog } from 'cbioportal-ts-api-client';
 
 import { dateOrNever, parseUrlParams } from './importerUtil';
 import ImporterHelp from './ImporterHelp';
+import './RowStyle.css';
 
 const panelStyle = {
     width: '50%',

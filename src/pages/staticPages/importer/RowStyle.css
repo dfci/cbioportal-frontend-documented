@@ -1,0 +1,19 @@
+.ui.table tr.positive {
+    background: #fcfff5 !important;
+    color: #2c662d !important;
+}
+
+.ui.table td.positive,
+.ui.table tr.positive {
+    box-shadow: 0 0 0 #a3c293 inset;
+}
+
+.ui.table tr.negative {
+    background: #fff6f6 !important;
+    color: #9f3a38 !important;
+}
+
+.ui.table td.negative,
+.ui.table tr.negative {
+    box-shadow: 0 0 0 #e0b4b4 inset;
+}
