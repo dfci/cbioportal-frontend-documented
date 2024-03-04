@@ -43,8 +43,19 @@ export default class Importer extends React.Component<{}, {}> {
     }
 
     renderStudy(study: ImportStudy): JSX.Element {
+        const rowStyle = {
+            background: study.imported ? '#fcfff5' : '#fff6f6',
+            color: study.imported ? '#2c662d' : '#9f3a38',
+            boxShadow: study.imported
+                ? '0 0 0 #a3c293 inset'
+                : '0 0 0 #e0b4b4 inset',
+        };
+
         return (
-            <tr className={study.imported ? 'positive' : 'negative'}>
+            <tr
+                style={rowStyle}
+                className={study.imported ? 'positive' : 'negative'}
+            >
                 <Link to={`/import/${study.studyId}`} id={study.name}>
                     <span>{study.name}</span>
                 </Link>
